@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ASPNET_CORE.Models.Funcionario>
+
+<h2>Todos os funcionários</h2>
+<a href="/Funcionarios/Cadastrar" class="btn btn-success">Novo Funcionário</a>
+<hr>
+@foreach (var funcionario in Model) {
+    <p>CPF: @funcionario.Cpf</p>
+    <p>Nome: @funcionario.Nome</p>
+    <p>Salario: @funcionario.Salario</p>
+    <a href="/Funcionarios/Editar/@funcionario.Id" class="btn btn-success">Novo Funcionário</a>
+    <hr>
+}
