@@ -1,0 +1,8 @@
+﻿@model IEnumerable<ASPNET_CORE.Models.Produto>
+
+<h2>minhas categorias</h2>
+<a href="/Funcionarios/Cadastrar" class="btn btn-success">Novo Funcionário</a>
+<hr>
+@foreach (var produto in Model) {
+    <p>Nome: @produto.Nome</p>
+}
