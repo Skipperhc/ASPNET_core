@@ -16,7 +16,6 @@ namespace ASPNET_CORE.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-<<<<<<< HEAD
             modelBuilder.Entity("ASPNET_CORE.Models.Categoria", b =>
                 {
                     b.Property<int>("Id")
@@ -31,8 +30,6 @@ namespace ASPNET_CORE.Migrations
                     b.ToTable("categorias");
                 });
 
-=======
->>>>>>> 026545085c3d1f4d0fa3d95478bbd37123ddab72
             modelBuilder.Entity("ASPNET_CORE.Models.Funcionario", b =>
                 {
                     b.Property<int>("Id")
