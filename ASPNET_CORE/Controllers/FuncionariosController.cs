@@ -48,5 +48,14 @@ namespace ASPNET_CORE.Controllers {
             DataBase.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult Editar() {
+            return View("Cadastrar");
+        }
+        [HttpPost]
+        public IActionResult Salvar(Funcionario funcionario) {
+            DataBase.Funcionarios.Add(funcionario);
+            DataBase.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
