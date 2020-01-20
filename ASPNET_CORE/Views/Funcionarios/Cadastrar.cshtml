@@ -1,9 +1,11 @@
 ﻿@model ASPNET_CORE.Models.Funcionario
 
+
 <h2>Cadastro de funcionarios</h2>
 
 
 <form class="form-horizontal" asp-action="Salvar" asp-controller="Funcionarios" method="post">
+    <input type="hidden" asp-for="Id">
     <input type="text" class="form-control" asp-for="Nome" placeholder="Nome">
     <input type="number" class="form-control" asp-for="Salario" placeholder="Salario">
     <input type="text" class="form-control" asp-for="Cpf" placeholder="Cpf">

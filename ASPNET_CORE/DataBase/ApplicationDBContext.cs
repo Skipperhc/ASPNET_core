@@ -9,6 +9,7 @@ namespace ASPNET_CORE.DataBase {
     public class ApplicationDBContext : DbContext {
 
         public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Categoria> categorias { get; set; }
 
 
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) {

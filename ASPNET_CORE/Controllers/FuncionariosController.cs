@@ -22,16 +22,31 @@ namespace ASPNET_CORE.Controllers {
         public IActionResult Cadastrar() {
             return View();
         }
-        public IActionResult Editar() {
-            return View("Cadastrar");
+        public IActionResult Editar(int id) {
+            Funcionario funcionario = DataBase.Funcionarios.First(Registro => Registro.Id == id);
+            return View("Cadastrar", funcionario);
         }
-        
-        [HttpPost]
-        public IActionResult Salvar(Funcionario funcionario) {
-            DataBase.Funcionarios.Add(funcionario);
+
+        public IActionResult Deletar(int id) {
+            Funcionario funcionario = DataBase.Funcionarios.First(Registro => Registro.Id == id);
+            DataBase.Funcionarios.Remove(funcionario);
             DataBase.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public IActionResult Salvar(Funcionario funcionario) {
+            if (funcionario.Id == 0) {
+                DataBase.Funcionarios.Add(funcionario);
+                DataBase.SaveChanges();
+            } else {
+                Funcionario FuncionarioDoBanco = DataBase.Funcionarios.First(registro => registro.Id == funcionario.Id);
+                FuncionarioDoBanco.Nome = funcionario.Nome;
+                FuncionarioDoBanco.Cpf= funcionario.Cpf;
+                FuncionarioDoBanco.Salario = funcionario.Salario;
+            }
+            DataBase.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
