@@ -29,7 +29,7 @@ namespace ASPNET_CORE.Controllers {
         //}
 
         public IActionResult Index() {
-            return View();
+            return RedirectToAction("Index", "Funcionarios");
         }
 
         public IActionResult Teste() {

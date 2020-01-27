@@ -20,5 +20,10 @@ namespace ASPNET_CORE.DataBase {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseLazyLoadingProxies();
         }
+
+        //para alterar as propriedades do banco
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.Entity<Produto>().Property(p => p.Nome);
+        }
     }
 }
